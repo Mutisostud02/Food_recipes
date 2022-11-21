@@ -1,0 +1,33 @@
+html{
+    margin:10px;
+}
+*,*::after,*::before{
+    border:inherit;
+}
+body{
+    width:100vw;
+    height:100vh;
+}
+h1{
+    font-size:40px;
+    font-weight:bold;
+    color:rgba(150,0,23,0.8);
+    font-family:Tahoma,monospace,sans-serif;
+}
+h2{
+    font-weight:bold;
+    color:rgba(120,200,120,0.9);
+}
+img{
+    width:300px;
+    height:auto;
+}
+p,li{
+    font-family:monospace, Tahoma,sans-serif;
+    font-size: 20px;
+
+}
+hr{
+    height:1.5px;
+    background-color: rgba(10,10,10,0.3);
+}
