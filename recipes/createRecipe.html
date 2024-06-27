@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="../css/create.css">
+</head>
+<body>
+    <form action="_blank"  enctype="multipart/form-data">
+        <label for="title">Title: </label>
+        <input id="title" type="text" required>
+        <label for="upload">Upload picture: </label>
+        <input id="photoUpload" type="file" accept="image/*" required>
+        <label for="description">Description: </label>
+        <textarea id="description" type="text required"></textarea>
+        <label for="ingredients">Ingredients </label>
+        <textarea id="ingredients" cols="25" rows="10">></textarea>
+        <label for ="steps">Steps</label>
+        <textarea id="steps" cols="25" rows="10"></textarea>
+        <button type="submit">submit</button>
+        </form>
+    <script src= "./script.js"></script>
+</body>
+</html>
