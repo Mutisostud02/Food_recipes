@@ -22,6 +22,13 @@ li a{
     font-size:25px;
     color:rgba(120,200,120,0.9);
 }
+#click{
+    color: rgba(130, 10,10,0.9);
+}
+li{
+    font-size:25px;
+    
+}
 a:hover{
     color:aqua;
 }
