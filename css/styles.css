@@ -42,3 +42,32 @@ hr{
 
 
 }
+#click{
+    color:brown                                                                 6;
+    font-weight:bold;
+}
+.here {
+    background-color:#f0fdfa;
+    opacity:0.5;
+    margin-left:1rem;
+    margin-right:0.5rem;
+    height:1.5rem;
+    border-radius:10%;
+}
+.here:hover {
+    background-color: rgba(50,150,200,0.3);
+    transform: scale(1.2);
+}
+.here:active {
+    background-color: rgba(20,0,100,0.3);
+}
+#display {
+    position: absolute;
+    z-index: 3;
+    top:5rem;
+    width:30vw;
+    height: 80dvh;
+    line-margin: 20vw;
+    background-color: rgba(100,150,50,0.8);
+    display: none;
+}
