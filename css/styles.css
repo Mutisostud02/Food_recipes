@@ -62,12 +62,13 @@ hr{
     background-color: rgba(20,0,100,0.3);
 }
 #display {
+    padding: 2rem;
+    padding-left: 5rem;
     position: absolute;
     z-index: 3;
     top:5rem;
     width:30vw;
-    height: 80dvh;
     line-margin: 20vw;
-    background-color: rgba(100,150,50,0.8);
+    background-color: #f4f4f4;
     display: none;
 }
