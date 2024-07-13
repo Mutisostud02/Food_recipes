@@ -46,19 +46,21 @@ hr{
     color:brown                                                                 6;
     font-weight:bold;
 }
-.here {
-    background-color:#f0fdfa;
+#here {
+    background-color:#d1dbd9;
     opacity:0.5;
     margin-left:1rem;
     margin-right:0.5rem;
     height:1.5rem;
     border-radius:10%;
+    font-weight: bold;
+    color:black;
 }
-.here:hover {
+#here:hover {
     background-color: rgba(50,150,200,0.3);
     transform: scale(1.2);
 }
-.here:active {
+#here:active {
     background-color: rgba(20,0,100,0.3);
 }
 #display {
@@ -68,7 +70,7 @@ hr{
     z-index: 3;
     top:5rem;
     width:30vw;
-    line-margin: 20vw;
+    margin-inline: 20vw;
     background-color: #f4f4f4;
     display: none;
 }
