@@ -1,16 +1,21 @@
 const display = document.getElementById('display')
-const recipeLabel = document.createElement('label');
-recipeLabel.textContent = "Name: "
-recipeLabel.setAttribute('for','name');
-recipeLabel.style.display = 'block';
-recipeLabel.setAttribute('style', 'width:100%; margin-right:3rem; color:#333333;font-weight:bold;')
-const recipeInput = document.createElement('input');
-recipeInput.setAttribute('id', 'name');
-recipeInput.setAttribute('type', 'text');
-recipeInput.setAttribute('style', 'margin: 0.5rem 0 0.5rem 3rem;')
-recipeInput.required = true;
-recipeLabel.appendChild(recipeInput);
 
+function rcpLbl() {
+    const recipeLabel = document.createElement('label');
+    recipeLabel.textContent = "Name: "
+    recipeLabel.setAttribute('for','name');
+    recipeLabel.style.display = 'block';
+    recipeLabel.setAttribute('style', 'width:100%; margin-right:3rem; color:#333333;font-weight:bold;')
+    const recipeInput = document.createElement('input');
+    recipeInput.setAttribute('id', 'name');
+    recipeInput.setAttribute('type', 'text');
+    recipeInput.setAttribute('style', 'margin: 0.5rem 0 0.5rem 3rem;')
+    recipeInput.required = true;
+    recipeLabel.appendChild(recipeInput);
+    return recipeLabel;
+}
+
+function dcbLbl() {
 const dscrptionLabel = document.createElement('label');
 dscrptionLabel.textContent = "Description: ";
 dscrptionLabel.setAttribute('for', 'description');
@@ -21,7 +26,10 @@ dscrptionInput.setAttribute('type', 'text');
 dscrptionInput.setAttribute('style', 'margin-left:0.8rem;')
 dscrptionInput.required = true;
 dscrptionLabel.appendChild(dscrptionInput);
+return dscrptionLabel;
+}
 
+function ingLbl() {
 const ingrLabel = document.createElement('label');
 ingrLabel.textContent = "Ingredients: "
 ingrLabel.setAttribute('for', 'ingredient');
@@ -32,7 +40,10 @@ ingrTextarea.setAttribute('type', 'text');
 ingrTextarea.setAttribute('style', 'margin-left:0.9rem;')
 ingrTextarea.required = true;
 ingrLabel.appendChild(ingrTextarea);
+return ingrLabel;
+}
 
+function stpLbl() {
 const stepsLabel = document.createElement('label');
 stepsLabel.textContent = "Steps: "
 stepsLabel.setAttribute('for', 'steps');
@@ -43,7 +54,10 @@ stepsTextarea.setAttribute('type', 'text');
 stepsTextarea.setAttribute('style', 'margin-left:3.2rem;')
 stepsTextarea.required = true;
 stepsLabel.appendChild(stepsTextarea);
+return stepsLabel;
+}
 
+function submit() {
 const sbmBtn = document.createElement('button');
 sbmBtn.textContent = "SUBMIT";
 sbmBtn.setAttribute('type', 'submit');
@@ -55,19 +69,22 @@ sbmBtn.addEventListener('mouseenter', () => {
 sbmBtn.addEventListener('mouseleave', () => {
     sbmBtn.style.backgroundColor = '#2563eb';
 });
+return sbmBtn;
+}
 
 
-display.appendChild(recipeLabel);
-display.appendChild(dscrptionLabel);
-display.appendChild(ingrLabel);
-display.appendChild(stepsLabel);
-display.appendChild(sbmBtn);
+display.appendChild(rcpLbl());
+display.appendChild(dcbLbl());
+display.appendChild(ingLbl());
+display.appendChild(stpLbl());
+display.appendChild(submit());
 console.log(display);
 
 
 const clickHere = document.getElementById('here');
 clickHere.addEventListener('click', () => {
-    console.log("its me again.")
+    console.log("its me again.");
+    console.log(display);
     if (display.style.display === 'none' || display.style.display === '') {
         display.style.display = "block";
     }
@@ -75,3 +92,4 @@ clickHere.addEventListener('click', () => {
         display.style.display === "none";
     }
 });
+
