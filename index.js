@@ -1,4 +1,5 @@
-const display = document.getElementById('display')
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.getElementById('display')
 
 function rcpLbl() {
     const recipeLabel = document.createElement('label');
@@ -61,6 +62,7 @@ function submit() {
 const sbmBtn = document.createElement('button');
 sbmBtn.textContent = "SUBMIT";
 sbmBtn.setAttribute('type', 'submit');
+sbmBtn.setAttribute('id', 'submit')
 sbmBtn.setAttribute('style', 'width:4rem; display:block;font-family: Arial, sans-serif; background-color:#2563eb; padding:0.2rem;color: white; margin-left:9rem;font-weight: bold;');
 sbmBtn.addEventListener('mouseenter', () => {
     sbmBtn.style.backgroundColor = '#45a049';
@@ -80,7 +82,6 @@ display.appendChild(stpLbl());
 display.appendChild(submit());
 console.log(display);
 
-
 const clickHere = document.getElementById('here');
 clickHere.addEventListener('click', () => {
     console.log("its me again.");
@@ -92,4 +93,40 @@ clickHere.addEventListener('click', () => {
         display.style.display === "none";
     }
 });
+// const arr= [];
+// const sbmBtn = submit();
+// sbmBtn.addEventListener('submit', function (e) {
+//     console.log('dfd')
+//     e.preventDefault();
+//     Array.push(rcpLbl().value)
+//     alert('ok')
+    
+// })
+const sbmBtne = document.getElementById('submit');
+const rcpLble = document.getElementById('name');
+const dcbLble = document.getElementById('description');
+const ingLble = document.getElementById('ingredient');
+const stpLble = document.getElementById('steps');
+const recipeArray = [];
 
+sbmBtne.addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('ok');
+    const formObj = {}
+    formObj.title = rcpLble.value;
+    formObj.description = dcbLble.value;
+    formObj.ingredient = ingLble.value;
+    formObj.step = stpLble.value;
+
+    recipeArray.push(formObj);
+    console.log(recipeArray);
+    display.style.display = "none";
+
+    rcpLble.value = "";
+    dcbLble.value = "";
+    ingLble.value = "";
+    stpLble.value = "";
+
+})
+
+})
