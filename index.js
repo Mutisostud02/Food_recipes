@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
     const display = document.getElementById('display')
 
 function rcpLbl() {
@@ -109,6 +109,10 @@ const ingLble = document.getElementById('ingredient');
 const stpLble = document.getElementById('steps');
 const recipeArray = [];
 
+const hideHr = document.getElementById('hide');
+const addedRcp = document.getElementById('added');
+const newRcpTitle = document.querySelector('.newRcpTitle');
+
 sbmBtne.addEventListener('click', function (e) {
     e.preventDefault();
     alert('ok');
@@ -120,7 +124,9 @@ sbmBtne.addEventListener('click', function (e) {
 
     recipeArray.push(formObj);
     console.log(recipeArray);
-    display.style.display = "none";
+
+   addRecipeToPage() 
+    newRcpTitle.style.display = "block";
 
     rcpLble.value = "";
     dcbLble.value = "";
@@ -129,4 +135,12 @@ sbmBtne.addEventListener('click', function (e) {
 
 })
 
-})
+// })   
+function addRecipeToPage() {
+    let addedRecipe = document.createElement('p');
+    for(let i = 0; i < recipeArray.length; i++) {
+        addedRecipe.textContent = recipeArray[i].title;
+        addedRcp.appendChild(addedRecipe);
+        hideHr.style.display = "block";
+    }
+   }
