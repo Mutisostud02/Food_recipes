@@ -124,6 +124,7 @@ sbmBtne.addEventListener('click', function (e) {
 
     recipeArray.push(formObj);
     console.log(recipeArray);
+    display.style.display = 'none';
 
    addRecipeToPage() 
     newRcpTitle.style.display = "block";
