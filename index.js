@@ -57,6 +57,38 @@ stepsTextarea.required = true;
 stepsLabel.appendChild(stepsTextarea);
 return stepsLabel;
 }
+function closeWindow() {
+    const closeButton = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    closeButton.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    closeButton.setAttribute("height", "24px");
+    closeButton.setAttribute("viewBox", "0 -960 960 960");
+    closeButton.setAttribute("width", "24px");
+    closeButton.setAttribute("fill", "#e8eaed");
+
+    // Create the path element
+    const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    pathElement.setAttribute("d", "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");
+
+    // Append the path element to the SVG element
+    closeButton.appendChild(pathElement);
+    closeButton.setAttribute("style", "background-color:blue; position:absolute;top:0.1rem;right:0.1rem;");
+    function closeBtnEvents() {
+        closeButton.addEventListener('mouseenter', () => {
+            closeButton.setAttribute('style', 'background-color:red; position:absolute;top:0.1rem;right:0.1rem;')
+        })
+        closeButton.addEventListener('mouseleave', () => {
+            closeButton.setAttribute('style', 'background-color:blue; position:absolute;top:0.1rem;right:0.1rem;')
+        })
+        closeButton.addEventListener('click', () => {
+            closeButton.setAttribute('style', 'background-color:red; transform:scale(1.1);position:absolute;top:0.1rem;right:0.1rem;');
+            setTimeout(() => {
+            display.style.display = 'none';
+            }, 500);
+        })
+    }
+    closeBtnEvents();
+    return closeButton;
+}
 
 function submit() {
 const sbmBtn = document.createElement('button');
@@ -79,8 +111,12 @@ display.appendChild(rcpLbl());
 display.appendChild(dcbLbl());
 display.appendChild(ingLbl());
 display.appendChild(stpLbl());
+display.appendChild(closeWindow());
 display.appendChild(submit());
 console.log(display);
+// display.addEventListener('click',() => {
+//     display.setAttribute('style','pointer-events:none;')
+// })
 
 const clickHere = document.getElementById('here');
 clickHere.addEventListener('click', () => {
@@ -93,15 +129,8 @@ clickHere.addEventListener('click', () => {
         display.style.display === "none";
     }
 });
-// const arr= [];
-// const sbmBtn = submit();
-// sbmBtn.addEventListener('submit', function (e) {
-//     console.log('dfd')
-//     e.preventDefault();
-//     Array.push(rcpLbl().value)
-//     alert('ok')
-    
-// })
+
+
 const sbmBtne = document.getElementById('submit');
 const rcpLble = document.getElementById('name');
 const dcbLble = document.getElementById('description');
@@ -136,7 +165,6 @@ sbmBtne.addEventListener('click', function (e) {
 
 })
 
-// })   
 function addRecipeToPage() {
     let addedRecipe = document.createElement('p');
     for(let i = 0; i < recipeArray.length; i++) {
